@@ -1,0 +1,42 @@
+page-offline-payment {
+  .content{
+    background: #f4f4f4;
+  }
+  .card{
+     width: 100%;
+    display: block;
+    margin: auto;
+    padding: 2px;
+    ion-item{
+        border: 1px solid transparent;
+        border-bottom-color: #eeeeee;
+    }
+  }
+
+
+
+  .mtn-banner{
+    border-radius: 56px;
+    width: 80px;
+    height: 80px;
+    display: block;
+    margin: 10px auto;
+
+  }
+}
+.custom-toast{
+  .toast-wrapper{
+    background: map-get($colors, danger) !important;
+    border-radius: 7px;
+    padding: 0 2.6rem;
+    width: 90%;
+    margin-top: 10px;
+
+  }
+  .toast-message{
+    font-size: 0.9em !important;
+  }
+  .toast-button{
+    font-size: 0.9em !important;
+  }
+}

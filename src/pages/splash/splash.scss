@@ -1,0 +1,38 @@
+page-splash {
+
+  .content{
+    background:#0a2d50;
+  }
+  .logo-card{
+    width: 130px;
+    height: 130px;
+    display: block;
+    margin:  auto;
+    background: url('../img/ic.png') no-repeat;
+    background-size: cover;
+  }
+  .card-pos{
+    display: block;
+    margin:  50px auto;
+  }
+
+  .description{
+    color: #FFF;
+
+  }
+
+  // SLIDE-UP ----------------------
+  .slide-up {
+    top: 1000px;
+    animation: slide_up 0.4s 0.0625s cubic-bezier(0.07, 0.65, 0, 0.96) forwards !important;
+  }
+  @keyframes slide_up {
+    from {
+      top: 1000px;
+    }
+    to {
+      top: 0px;
+    }
+  }
+
+}

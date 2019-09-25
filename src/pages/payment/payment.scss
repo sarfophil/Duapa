@@ -1,0 +1,36 @@
+page-payment {
+  .content{
+    background: #f4f4f4;
+  }
+  .item{
+    background: transparent;
+  }
+  .profile-btn{
+    padding: 21px !important;
+    opacity: 0.9 !important;
+    border-radius: 0px !important;
+    box-shadow:none;
+
+  }
+
+  .mtn-banner{
+   border-radius: 10px;
+  }
+}
+
+.custom-toast{
+  .toast-wrapper{
+    background: map-get($colors, danger) !important;
+    border-radius: 7px;
+    padding: 0 2.6rem;
+    width: 90%;
+    margin-top: 10px;
+
+  }
+  .toast-message{
+    font-size: 0.9em !important;
+  }
+  .toast-button{
+    font-size: 0.9em !important;
+  }
+}

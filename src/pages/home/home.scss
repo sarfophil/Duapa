@@ -1,0 +1,154 @@
+page-home {
+  .content{
+    background:#f4f4f4;
+  }
+    .main-content {
+        margin-top: -20px;
+        margin-left: 10px;
+        margin-right: 10px;
+        background-color: white;
+        -webkit-box-shadow: 0px 0px 55px -16px rgba(0, 0, 0, 0.75);
+        -moz-box-shadow: 0px 0px 55px -16px rgba(0, 0, 0, 0.75);
+        box-shadow: 0px 0px 55px -16px rgba(0, 0, 0, 0.75);
+        // background: #F5F5F5;
+        position: relative !important;
+
+    }
+    .card-status{
+    
+        /* height: 300px; */
+    }
+    .card-header-md{
+
+    	
+    }
+  .profile-pic{
+    //-webkit-box-shadow: 0 0 4px rgba(0,0,0,.7);
+    //box-shadow: 0 0 4px rgba(0,0,0,.7);
+  }
+  .profile-btn{
+    position: absolute;
+    bottom: -2px;
+    left: 55px;
+    box-shadow:none;
+    height: 30px !important;
+    width: 30px !important;
+     .icon{
+        font-size: 1.2em;
+     }
+  }
+
+   .pledge-btn{
+        margin-left: 10px;
+        margin-right: 10px;
+       /* // position: relative !important; */
+
+   }
+
+	.header-image {
+        background: map-get($colors,primary);
+        height: 4vh;
+        position: relative;
+        z-index: -1;
+    }
+  h6{
+    font-size: 0.9em !important;
+  }
+    ion-title{
+    	position: absolute;
+    	top:0;
+    	left: 0;
+    	padding: 0 90px 1px;
+    	width:100%;
+    	height: 100%;
+    	text-align:center;
+
+    }
+    .item-title{
+    	display: block;
+    	margin: auto;
+    	color: grey;
+    }
+    .item-value{
+    	font-size: 1.5em;
+        font-family: "Segoe UI", "Noto Sans", sans-serif;
+    }
+  .task-empty{
+    width: 60px;
+    height: 60px;
+    display: block;
+    margin: auto;
+  }
+  //.card-status{
+  //  height: 80%;
+  //}
+  .confirm-btn{
+    box-shadow:none;
+  }
+  .note{
+    display: block;
+    margin: auto;
+  }
+  .spinner-md-crescent circle{
+    stroke: #1976D2 !important;
+    stroke-width: 9px !important;
+    stroke-dashoffset:10px !important;
+  }
+  .spinner-md-crescent{
+    display: block;
+    margin: 30px auto;
+
+  }
+
+  /*Modal*/
+  ion-modal,
+  .show-page {
+    // transparent black background overlay
+    background-color: rgba(0, 0, 0, .5) !important;
+    padding: 50px !important;
+  }
+
+  ion-modal.modal-wrapper {
+    transform: translateY(30%) !important;
+  }
+  ion-page.modal {
+    padding: 30px;
+    background: rgba(0, 0, 0, 0.5);
+  }
+  .modal-backdrop-bg {
+    background-color: #000;
+    opacity: 0;
+  }
+  .active .modal-backdrop-bg {
+    opacity: 0.5;
+  }
+  .task_div img{
+    width: 70px;
+    height: 70px;
+  }
+  .pledge_pending img{
+    width: 40px;
+    height: 40px;
+  }
+   .pledge_timestamp{
+      color: #b1b1b1;
+   }
+  .pledge_pending{
+    border: 1px solid transparent;
+    border-bottom-color: #eee;
+  }
+
+
+
+}
+/*Modal Css code*/
+ion-modal.inset-modal {
+  // transparent black background overlay
+  background-color: rgba(0, 0, 0, .5) !important;
+  transition: opacity .25s ease-in-out;
+  padding: 20vh 10vw;
+}
+
+
+
+

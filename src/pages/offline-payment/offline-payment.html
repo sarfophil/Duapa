@@ -1,0 +1,50 @@
+<!--
+  Generated template for the OfflinePaymentPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>Offline payment</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+   <ion-card>
+       <img src="img/mtn-mobile.jpg" class="mtn-banner">
+           <ion-list>
+               <ion-item>
+                   <h6>Package Name</h6>
+                   <p item-end><b>{{crt.POINT_NAME}}</b></p>
+               </ion-item>
+               <ion-item>
+                   <h6>Package Amount</h6>
+                   <p item-end><b>GHS {{crt.POINTS_AMT}}</b></p>
+               </ion-item>
+               <ion-item>
+                <h6>Network</h6>
+                   <p item-end><b>Mtn Mobile Money</b></p>
+               </ion-item>
+               <ion-item>
+                   <h6>Number</h6>
+               </ion-item>
+                <ion-item no-lines text-wrap>
+                    <small>
+                        Go to your Mtn Mobile Money Wallet and transfer <b>{{'GHS '+crt.POINTS_AMT}}</b>
+                        to this MTN Mobile Number <b>0550338196</b><br>
+                        <b>Note!</b> The name associated with the number is <b>Okyere Barima Awuku</b><br>
+                        After transfer,cick on "Confirm Payment" and enter the <b>Transaction ID</b>
+                    </small>
+                </ion-item>
+           </ion-list>
+
+
+   </ion-card>
+
+    <button ion-button block (click)="Confirm()">CONFIRM PAYMENT</button>
+
+</ion-content>

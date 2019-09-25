@@ -1,0 +1,31 @@
+page-notifications {
+  .content{
+     background:#f4f4f4;
+  }
+  .spinner{
+    display: block;
+    margin: auto;
+  }
+  .spinner-md-crescent circle{
+    stroke: #1976D2 !important;
+    stroke-width: 9px !important;
+    stroke-dashoffset:10px !important;
+  }
+  .spinner-md-crescent{
+    display: block;
+    margin: 30px auto;
+
+  }
+  .empty_box{
+    img{
+      width: 50px;
+      height: 50px;
+      display: block;
+      margin: 50% auto;
+    }
+  }
+  .avatar-ic{
+    width: 30px;
+    height: 30px;
+  }
+}

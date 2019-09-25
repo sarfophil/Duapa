@@ -1,0 +1,41 @@
+<!--
+  Generated template for the LoginPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header no-border>
+  <ion-navbar color="splash">
+    <ion-title>Login to your account</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+
+    <ion-card class="logo-card slide-up">
+    </ion-card>
+         
+		<div padding>
+		<ion-item class="input-items">
+			<ion-label inset>Phonenumber</ion-label>
+			<ion-input type="number" name="phonenumber" [(ngModel)]="data.contact"></ion-input>
+		</ion-item>
+		<ion-item no-lines class="input-items">
+			 <ion-label inset>Password</ion-label>
+			 <ion-input type="password" name="password" [(ngModel)]="data.password"></ion-input>
+		</ion-item>
+			<button ion-button block class="login-btn"  color="loginbtn" (click)="login()">LOGIN</button>
+
+		<ion-item>
+			<button ion-button clear color="light" block class="forgot-button" (click)="fgtpassword()">Forgot Password?</button>
+		</ion-item>
+        </div>
+
+		  <!--<button ion-button block  clear  color="light" class="login-button">-->
+		  	<!--<ion-icon name="logo-facebook"></ion-icon>&nbsp; Login with Facebook</button>-->
+	   
+	
+    
+</ion-content>
+<!--<ion-footer no-border>-->
+	<!--<button (click)="signup()" color="light" ion-button clear block>Create Account</button>-->
+<!--</ion-footer>-->

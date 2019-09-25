@@ -1,0 +1,183 @@
+<!--
+  Generated template for the HomePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header no-border>
+
+  <ion-navbar color="primary" >
+    <ion-title>D U A P A</ion-title>
+    <ion-buttons end>
+    	<button icon-only ion-button (click)="Reload()">
+    		<ion-icon name="ios-refresh"></ion-icon>
+    	</button>
+		<a href="https://tawk.to/chat/5b4f350adf040c3e9e0bb02f/default/?$_tawk_popout=true" ion-button><ion-icon name="chatboxes"></ion-icon></a>
+
+	</ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+	<div class="header-image"></div>
+    <div class="main-content">
+      <ion-item no-lines>
+      	<ion-avatar item-left>
+      		<img src="img/boy.png" class="profile-pic"  style="width: 70px; height: 70px;">
+
+      	</ion-avatar>
+		  <button ion-fab mini clear class="profile-btn" (click)="profile()">
+			  <ion-icon name="contact"></ion-icon>
+		  </button>
+      	<ion-row>
+      		<ion-col col-4>
+      			<h1 text-center class="item-value">{{ crt }}</h1>
+      			<small text-center class="item-title">CRT</small>
+      		</ion-col>
+      		<ion-col col-4>
+      			<h1 text-center class="item-value">{{ pledge }}</h1>
+      			<small text-center class="item-title">PLEDGE</small>
+      		</ion-col>
+			<ion-col col-4 (click)="goToNotification()">
+				<h1 text-center class="item-value">{{ alert }}</h1>
+				<small text-center class="item-title">{{ alert > 1 ?'ALERTS':'ALERT'}}</small>
+			</ion-col>
+      	</ion-row>
+
+      </ion-item>
+		<button ion-button block color="" (click)="Pledge()" [disabled]="isPledge">
+			PLEDGE
+		</button>
+
+	</div>
+    <ion-card *ngIf="Pending_Amt != undefined && Pending_Amt != 0">
+        <ion-item text-wrap>
+            <img src="img/incomes.png" item-start style="width: 30px; height: 30px;">
+            <p>You qualify to receive GHS {{ Pending_Amt }} on {{ Pending_mature_date | date }}</p>
+        </ion-item>
+    </ion-card>
+	<!--TODO: Also Display a page when the system shuts down-->
+	<ion-card class="card-status">
+		 	<ion-card-header>
+				Current Task
+			</ion-card-header>
+
+		<ion-card-content>
+
+			<ion-spinner name="crescent" [hidden]= "isSpinner"></ion-spinner>
+			<ion-list [ngSwitch]="Task_status">
+                <!--Pending Pledge-->
+                <!--2oo-->
+                <div *ngSwitchCase="204">
+                <ion-item ion-item class="pledge_pending">
+					<img src="img/wallet.png" item-start style="width: 40px; height: 40px;">
+                    <h2>&nbsp;PLEDGE CODE. {{ pledge_code.PLEDGE_CODE }}</h2>
+
+                </ion-item>
+				<ion-item class="pledge_pending">
+					<h6>Pledge Amount</h6>
+					<small item-end>{{ 'GHS '+pledge_code.PLEDGE_AMT }}</small>
+				</ion-item>
+				<ion-item class="pledge_pending">
+					<h6>Status</h6>
+					<small item-end>{{ pledge_code.PLEDGE_ASSIGN_STATUS == 0?'Pending':'Assigned' }}</small>
+				</ion-item>
+				<ion-item class="pledge_pending">
+					<p><ion-icon name="information-circle"  color="primary"></ion-icon>&nbsp;Your Pledge will be assigned shortly.</p>
+				</ion-item>
+				<ion-item>
+					<small class="pledge_timestamp" item-end>Pledged {{ pledge_code.PLEDGE_DATETIME | amCalendar }}</small>
+				</ion-item>
+					<div [hidden] = "isEmpty" *ngIf="pledge_code == ''">
+						<img src="img/coins.png" class="task-empty"/>
+						<br>
+						<ion-note text-center>No Task Available</ion-note>
+					</div>
+
+                </div>
+                <!--End of Pending Pledge-->
+				<!--Start of Match to Pay-->
+                <!--204-->
+                <div *ngSwitchCase="200">
+				<button ion-item>
+					<img src="img/wallet.png" item-start style="width: 25px; height: 25px;">
+					<h6>MATCHED TO PAY</h6>
+					<small>{{ Pledges?.USER_NAME }}</small>
+					<ion-note item-right>{{ 'GHS '+Pledges?.CONFIRM_AMT }}</ion-note>
+					<ion-icon name="arrow-right" item-right></ion-icon>
+				</button>
+				<ion-item>
+					 <h6>MOBILE MONEY NUMBER</h6>
+					<small>{{ Pledges?.USER_CONTACT }}</small>
+					<button ion-button clear item-right (click)="call(Pledges?.USER_CONTACT)"><ion-icon name="call"></ion-icon></button>
+				</ion-item>
+				<ion-item>
+					<h6>REFERENCE NUMBER</h6>
+					<small item-right>{{Pledges?.PLEDGE_CODE}}</small>
+				</ion-item>
+				<ion-item text-wrap>
+					<h6>PLEDGE DEADLINE</h6>
+					<small item-right>{{ countdown }}</small>
+				</ion-item>
+				<ion-item text-wrap>
+					<ion-note>Click Confirm Payment if money has been sent to {{ Pledges?.USER_NAME }}</ion-note>
+					<ion-note> </ion-note>
+				</ion-item>
+				<button ion-button color="primary" class="confirm-btn" block item-left (click)="Confirm(Pledges)" *ngIf="Pledges?.CONFIRM_PAYEE_STATUS == '0'">Confirm Payment</button>
+                    <button ion-button color="primary" class="confirm-btn" block item-left *ngIf="Pledges?.CONFIRM_PAYEE_STATUS == '1'" disabled>Confirm Payment</button>
+					<div [hidden] = "isEmpty" *ngIf="Pledges == ''">
+						<img src="img/coins.png" class="task-empty"/>
+						<br>
+						<ion-note text-center>No Task Available</ion-note>
+					</div>
+                </div>
+				<!--End of Match to Pay-->
+                <!--Start of Awaiting-->
+                <!--205-->
+                <div *ngSwitchCase="205">
+                    <button ion-item *ngFor="let Await of Await" (click)="goToAwait(Await)">
+                        <img src="img/incomes.png" item-start style="width: 30px; height: 30px;">
+                        <small>Payment {{ Await.PLEDGE_CODE }}</small><br>
+                        <small text-sm-justify>GHS {{ Await.CONFIRM_AMT }}</small><br>
+                        <small style="color: #c8c7cc"  *ngIf="Await.CONFIRM_PAYEE_STATUS == '0' && Await.CONFIRM_AWAIT_STATUS == '0'"><ion-icon name="checkmark-circle"></ion-icon>&nbsp;Pending</small>
+                        <small style="color: #c8c7cc"   *ngIf="Await.CONFIRM_PAYEE_STATUS == '1' && Await.CONFIRM_AWAIT_STATUS == '0'"><ion-icon name="checkmark-circle"></ion-icon>&nbsp;{{ Await.USER_NAME }} has confirmed</small>
+                        <small style="color: forestgreen"  *ngIf="Await.CONFIRM_PAYEE_STATUS == '1' && Await.CONFIRM_AWAIT_STATUS == '1'"><ion-icon name="checkmark-circle"></ion-icon>&nbsp;Confirmed</small>
+                    </button>
+					<div [hidden] = "isEmpty" *ngIf="Await?.length == 0">
+						<img src="img/coins.png" class="task-empty"/>
+						<br>
+						<ion-note text-center>No Task Available</ion-note>
+					</div>
+
+                </div>
+				<!--Inactive Account-->
+				<div *ngSwitchCase="5001">
+					<div [hidden] = "isEmpty">
+						<img src="img/exclamation.png" class="task-empty"/>
+						<br>
+						<ion-note text-center color="danger"><ion-icon name="lock"></ion-icon>&nbsp;Account Blocked</ion-note>
+						<br>
+						<ion-note>
+							Please click on <ion-icon color="primary" name="chatboxes"></ion-icon> and contact us to unblock your account.
+						</ion-note>
+					</div>
+				</div>
+				<div *ngSwitchDefault="">
+					<div [hidden] = "isEmpty">
+						<img src="img/coins.png" class="task-empty"/>
+						<br>
+						<ion-note text-center>No Task Available</ion-note>
+					</div>
+				</div>
+
+                <!--End of Awaiting-->
+
+			</ion-list>
+
+
+
+		</ion-card-content>
+
+	</ion-card>
+</ion-content>

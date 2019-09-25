@@ -1,0 +1,30 @@
+<!--
+  Generated template for the NotificationsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar color="notification">
+    <ion-title>Alert</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+    <ion-spinner name="crescent" [hidden]="isLoading"></ion-spinner>
+    <ion-list text-wrap>
+        <ion-item *ngFor="let alert of Alert">
+            <img src="img/notification.png" class="avatar-ic" item-start>
+            <p>
+                {{ alert.NOTI_MESSAGE }}
+            </p>
+            <ion-note>
+                <ion-icon name="notifications"></ion-icon> &nbsp; {{ alert.NOTI_DATE | amTimeAgo }}
+            </ion-note>
+        </ion-item>
+    </ion-list>
+
+    <div class="empty_box" *ngIf="Alert?.length == 0">
+         <img src="img/notification.png">
+
+    </div>
+</ion-content>

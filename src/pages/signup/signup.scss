@@ -1,0 +1,74 @@
+page-signup {
+  
+  .content{
+    background: #f4f4f4;
+ }
+  .input-items .input-wrapper{
+    border: 1px solid transparent !important;
+    border-bottom-color: #a4a4a4 !important;
+  }
+
+ .toolbar-background-md{
+    background: transparent;
+  }
+  .back-button{
+  	color: #FFF !important;
+  }
+  .toolbar-title-md{
+  	color: #FFF !important;
+  }
+  
+  //.item-input .label-md, .item-select .label-md, .item-datetime .label-md{
+  //	color: #FFF !important;
+  //}
+  .item{
+  	background:transparent;
+  }
+  .custom-list{
+  	display: block;
+  	margin: auto;
+  	width: 90%;
+  }
+  .sign-btn{
+  	 padding: 24px !important;
+      opacity: 0.9 !important;
+      border-radius: 0px !important;
+    //box-shadow: none;
+  }
+  //.input-items {
+  //  border-radius: 3px !important;
+  //  padding-left: 10px !important;
+  //  margin-bottom: 15px !important;
+  //  margin-bottom: 10px;
+  //  background-color: transparent;
+  //  font-size: 0.9em;
+  //  border: 1px solid #a4a4a4;
+  //
+  //
+  //}
+  // ::-webkit-input-placeholder {
+  //  color: #8c8c8c !important;
+  //}
+  //.item-inner {
+  //  border-bottom: 0 !important;
+  //  box-shadow: none !important;
+  //}
+
+}
+
+.custom-toast{
+  .toast-wrapper{
+    background: map-get($colors, danger) !important;
+    border-radius: 7px;
+    padding: 0 2.6rem;
+    width: 90%;
+    margin-top: 10px;
+
+  }
+  .toast-message{
+    font-size: 0.9em !important;
+  }
+  .toast-button{
+    font-size: 0.9em !important;
+  }
+}

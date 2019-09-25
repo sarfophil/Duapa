@@ -1,0 +1,26 @@
+page-crt-select-menu {
+  .spinner-md-crescent circle{
+    stroke: #1976D2 !important;
+    stroke-width: 9px !important;
+    stroke-dashoffset:10px !important;
+  }
+
+  .spinner-md-crescent{
+    display: block;
+    margin: 50% auto;
+  }
+
+  .item{
+    .note{
+      font-size: 0.8em;
+    }
+  }
+  .item-md  img{
+    width: 30px;
+    height: 30px;
+  }
+  .item-md ion-thumbnail{
+    width: 30px !important;
+    height: 30px !important;
+  }
+}

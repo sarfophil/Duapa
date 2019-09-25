@@ -1,0 +1,55 @@
+page-points {
+   .content{
+   	 background: #f4f4f4;
+   }
+  .item{
+    .button{
+      box-shadow: none;
+    }
+  }
+  .empty-list{
+    display: block;
+    margin:  40px auto;
+  }
+  .spinner-md-crescent circle{
+    stroke: #1976D2 !important;
+    stroke-width: 9px !important;
+    stroke-dashoffset:10px !important;
+  }
+  .spinner-md-crescent{
+    display: block;
+    margin: 50% auto;
+
+  }
+  .coin-img{
+    width: 50px;
+    height: 55px;
+    display: block;
+    margin: auto;
+
+  }
+  .card-points{
+    box-shadow: none;
+    background: #FFF;
+    border: 1px solid #f9f9f9 !important;
+    p{
+      color: grey;
+      font-size: 0.8em;
+    }
+    button{
+      display: block;
+      margin: auto;
+    }
+  }
+  .crt_description{
+    display: block;
+    color: grey;
+    margin: auto !important;
+  }
+  .points-title{
+     font-size: 0.9em;
+  }
+  .package-description{
+    //padding: 0;
+  }
+}

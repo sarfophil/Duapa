@@ -1,0 +1,44 @@
+page-login {
+  $transparent-white: rgba(255, 255, 255, .6);
+ .content{
+ 	background: #0a2d50;
+ }	
+
+  .login-input{
+   width: 300px;
+      margin: auto;
+      display: block;
+      background: rgba(255,255,255,0.5) !important;
+     
+  }
+  .logo-card{
+    width: 100px;
+    height: 100px;
+    display: block;
+    margin: 40px auto;
+    background: url('../img/ic.png') no-repeat;
+    background-size: cover;
+  }
+  ion-item{
+    background: transparent !important;
+  }
+  .input-items {
+    border-radius: 3px !important;
+    padding-left: 10px !important;
+    margin-bottom: 15px !important;
+    margin-bottom: 10px;
+    color: #000 !important;
+    background-color: #FFF !important;
+    //font-size: 0.9em;
+  }
+   ::-webkit-input-placeholder {
+    color: white !important;
+  }
+  .item-inner {
+    border-bottom: 0 !important;
+    box-shadow: none !important;
+  }
+
+
+
+}

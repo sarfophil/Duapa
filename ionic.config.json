@@ -1,0 +1,8 @@
+{
+  "name": "Dua_Pa",
+  "app_id": "",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}
